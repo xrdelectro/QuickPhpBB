@@ -29,12 +29,13 @@ sudo apt install apache2 php php-mbstring php-xml php-bcmath php-json php-curl p
 
 # Download PHPBB
 echo "Downloading PHPBB latest release..."
-wget https://download.phpbb.com/pub/release/3.3/3.3.10/phpBB-3.3.10.zip
+FN=phpBB-3.3.15.tar.bz2
+wget https://download.phpbb.com/pub/release/3.3/3.3.15/$FN
 
 # Unzip and move to /var/www/html
 echo "Extracting PHPBB..."
-unzip phpBB-3.3.10.zip
-sudo mv phpBB3 /var/www/html/phpbb
+tar -xf $FN -C /var/www/html/phpbb
+#sudo mv phpBB3 /var/www/html/phpbb
 
 # Set permissions for the web server
 echo "Setting permissions..."
